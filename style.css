@@ -1346,3 +1346,307 @@ code {
     padding: 10pt;
   }
 }
+
+
+/* ==========================================================================
+   11. KOMPONEN INTERAKTIF LANJUTAN (STEPPER, DRILLS, FLASHCARD, VOCAB & CHEATSHEET)
+   ========================================================================== */
+.stepper-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stepper-step {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stepper-step:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.step-title {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.stepper-answer .step-title {
+  color: var(--accent-primary);
+}
+
+.bold-text {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.drills-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drill-card {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.drill-question-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-primary);
+  margin: 0 0 6px;
+}
+
+.drill-question {
+  margin: 0 0 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.drill-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.drill-option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 160ms ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.drill-option-btn:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-soft);
+}
+
+.drill-option-btn.is-correct {
+  background-color: var(--success-bg) !important;
+  border-color: var(--success-border) !important;
+  color: var(--success-text) !important;
+  font-weight: 600;
+}
+
+.drill-option-btn.is-wrong {
+  background-color: var(--danger-bg) !important;
+  border-color: var(--danger-border) !important;
+  color: var(--danger-text) !important;
+}
+
+.drill-explanation {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background-color: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: var(--radius-sm);
+}
+
+.expl-title {
+  margin: 0 0 4px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.expl-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Flashcards Interaktif Flip */
+.flashcards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.flashcard-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 160ms ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flashcard-box:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.flashcard-box.is-flipped {
+  background-color: var(--accent-soft);
+  border-color: #BFDBFE;
+}
+
+.flashcard-pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.flashcard-front,
+.flashcard-back {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.flashcard-back {
+  font-weight: 500;
+}
+
+/* Cheatsheet Grid & Item Cards */
+.cheatsheet-subtest-block {
+  margin-bottom: 32px;
+}
+
+.cheatsheet-header {
+  margin-bottom: 16px;
+}
+
+.cheatsheet-title {
+  margin: 6px 0 2px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.cheatsheet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.cheatsheet-item-card {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.cheatsheet-item-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Tabel Kosakata Akademik (LBE) */
+.vocab-cheatsheet-block {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-top: 16px;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.vocab-table th,
+.vocab-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+.vocab-table th {
+  background-color: var(--bg-surface);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.vocab-table tr:last-child td {
+  border-bottom: none;
+}
+
+.vocab-table tr:hover td {
+  background-color: var(--bg-surface);
+}
+
+.vocab-example {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Catatan Tambahan */
+.note-item-card {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-icon-danger {
+  background: transparent;
+  border: 1px solid var(--danger-border);
+  color: var(--danger-text);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.btn-icon-danger:hover {
+  background-color: var(--danger-bg);
+}
+
+.whitespace-pre {
+  white-space: pre-wrap;
+}
